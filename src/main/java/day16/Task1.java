@@ -2,6 +2,7 @@ package day16;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Task1 {
@@ -11,7 +12,7 @@ public class Task1 {
         printResult(file);
     }
 
-    static void printResult(File file) throws FileNotFoundException {
+    public static void printResult(File file) throws FileNotFoundException {
         Scanner scanner = new Scanner(file);
         String str = scanner.nextLine();
         String[] arr = str.split(" ");
@@ -24,7 +25,8 @@ public class Task1 {
             if (i == arr.length - 1)
                 aSum = (double) sum / (i + 1);
         }
-        System.out.printf("%.14f", aSum);
-        System.out.printf(" --> " + "%.3f", aSum);
+        System.out.printf(Locale.US, "%.15f", aSum);
+        System.out.print(" --> ");
+        System.out.printf("%.3f", aSum);
     }
 }
